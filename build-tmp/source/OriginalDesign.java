@@ -1,3 +1,19 @@
+import processing.core.*; 
+import processing.data.*; 
+import processing.event.*; 
+import processing.opengl.*; 
+
+import java.util.HashMap; 
+import java.util.ArrayList; 
+import java.io.File; 
+import java.io.BufferedReader; 
+import java.io.PrintWriter; 
+import java.io.InputStream; 
+import java.io.OutputStream; 
+import java.io.IOException; 
+
+public class OriginalDesign extends PApplet {
+
 		int position;
 		int r;
 		float randColor=random(255);
@@ -6,7 +22,7 @@
 		int randNum;
 		int count = 0;
 		int transparency=255; 
-		void setup()
+		public void setup()
 
 
 		{
@@ -17,7 +33,7 @@
 			r=0;
 
 		}
-		void draw()
+		public void draw()
 		{		
 				if(spiral ==true){
 					randNum = (int)(Math.random()*2);
@@ -44,7 +60,7 @@
 				}
 
 		}
-		void mousePressed(){
+		public void mousePressed(){
 				resetMatrix();
 		 		fill(0,150);
 		 		rect(0,0, width,height);
@@ -54,7 +70,7 @@
 		 		transparency = 255;
 		 		System.out.println(count);
 		}
-		void spiral(){
+		public void spiral(){
 			
 			noStroke();
 			translate(width/2,height/2);
@@ -67,7 +83,7 @@
 		
 		}
 
-		void spiralReverse(){
+		public void spiralReverse(){
 			noStroke();
 			fill(random(255)+changeColor,changeColor,0);
 			translate(width/2,height/2);
@@ -77,3 +93,12 @@
 			r++;
 			changeColor++;
 		}
+  static public void main(String[] passedArgs) {
+    String[] appletArgs = new String[] { "OriginalDesign" };
+    if (passedArgs != null) {
+      PApplet.main(concat(appletArgs, passedArgs));
+    } else {
+      PApplet.main(appletArgs);
+    }
+  }
+}
