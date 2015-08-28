@@ -35,7 +35,7 @@ public class OriginalDesign extends PApplet {
 		}
 		public void draw()
 		{		
-				if(spiral ==true){
+				
 					randNum = (int)(Math.random()*2);
 					if(count == 1){
 						fill(random(255)+changeColor,changeColor,0, transparency);
@@ -55,9 +55,9 @@ public class OriginalDesign extends PApplet {
 					else if(count == 6){
 						fill(changeColor,0,random(255)+changeColor, transparency);
 					}
-					//fill(random(255)+changeColor,changeColor,0, transparency);
-					spiral();	
-				}
+					fill(0, transparency);
+					spiralFunction();	
+				
 
 		}
 		public void mousePressed(){
@@ -68,9 +68,8 @@ public class OriginalDesign extends PApplet {
 		 		changeColor = 0;
 		 		count=(int)(Math.random()*6)+1;
 		 		transparency = 255;
-		 		System.out.println(count);
 		}
-		public void spiral(){
+		public void spiralFunction(){
 			
 			noStroke();
 			translate(width/2,height/2);
@@ -87,7 +86,7 @@ public class OriginalDesign extends PApplet {
 			noStroke();
 			fill(random(255)+changeColor,changeColor,0);
 			translate(width/2,height/2);
-			rotate(r);
+			rotate(-r);
 			ellipse(position, position, 10,10);
 			position++;
 			r++;
