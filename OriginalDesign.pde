@@ -6,11 +6,12 @@
 		int randNum;
 		int count = 0;
 		int transparency=255; 
+		int opacity;
 
 		void setup()
 		{
 			size(800,800);
-			background (0,100);
+			background (0);
 			frameRate(100);
 			position=0;
 			r=0;
@@ -38,7 +39,6 @@
 				else if(count == 6){
 					fill(changeColor,0,randNum+changeColor, transparency);
 				}
-				println(randNum);
 				spiralFunction();	
 				
 
@@ -46,12 +46,14 @@
 
 		void mousePressed(){
 				resetMatrix();
-		 		fill(0,150);
+				opacity = 150;
+		 		fill(0,opacity);
 		 		rect(0,0, width,height);
 		 		position = 0;
 		 		changeColor = 0;
 		 		count=(int)(Math.random()*6)+1;
 		 		transparency = 255;
+		 		opacity = 0;
 		}
 		void spiralFunction(){
 			
