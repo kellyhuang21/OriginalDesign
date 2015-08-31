@@ -22,44 +22,44 @@ public class OriginalDesign extends PApplet {
 		int randNum;
 		int count = 0;
 		int transparency=255; 
+
 		public void setup()
-
-
 		{
 			size(800,800);
 			background (0,100);
 			frameRate(100);
 			position=0;
 			r=0;
-
 		}
+		
 		public void draw()
 		{		
 				
-					randNum = (int)(Math.random()*2);
-					if(count == 1){
-						fill(random(255)+changeColor,changeColor,0, transparency);
-					}
-					else if(count == 2){
-						fill(changeColor,random(255)+changeColor,0, transparency);
-					}
-					else if(count == 3){
-						fill(0,random(255)+changeColor, changeColor, transparency);
-					}
-					else if(count == 4){
-						fill(random(255)+changeColor,0, changeColor, transparency);
-					}
-					else if(count == 5){
-						fill(0,changeColor,random(255)+changeColor, transparency);
-					}
-					else if(count == 6){
-						fill(changeColor,0,random(255)+changeColor, transparency);
-					}
-					fill(0, transparency);
-					spiralFunction();	
+				randNum = (int)(Math.random()*255);
+				if(count == 1){
+					fill(randNum+changeColor,changeColor,0, transparency);
+				}
+				else if(count == 2){
+				fill(changeColor,randNum+changeColor,0, transparency);
+				}
+				else if(count == 3){
+					fill(0,randNum+changeColor, changeColor, transparency);
+				}
+				else if(count == 4){
+					fill(randNum+changeColor,0, changeColor, transparency);
+				}
+				else if(count == 5){
+					fill(0,changeColor,randNum+changeColor, transparency);
+				}
+				else if(count == 6){
+					fill(changeColor,0,randNum+changeColor, transparency);
+				}
+				println(randNum);
+				spiralFunction();	
 				
 
 		}
+
 		public void mousePressed(){
 				resetMatrix();
 		 		fill(0,150);
@@ -81,6 +81,7 @@ public class OriginalDesign extends PApplet {
 			transparency--;
 		
 		}
+
 
 		public void spiralReverse(){
 			noStroke();
