@@ -1,6 +1,5 @@
 		int position;
 		int r;
-		float randColor=random(255);
 		int changeColor=0;
 		boolean spiral = true;
 		int randNum;
