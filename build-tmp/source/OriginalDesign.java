@@ -37,6 +37,7 @@ public class OriginalDesign extends PApplet {
 		{		
 				
 				randNum = (int)(Math.random()*255);
+				fill(randNum+changeColor,changeColor,0, transparency);
 				if(count == 1){
 					fill(randNum+changeColor,changeColor,0, transparency);
 				}
